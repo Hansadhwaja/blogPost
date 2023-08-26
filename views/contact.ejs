@@ -1,0 +1,14 @@
+
+
+<%- include("partials/header")%>
+
+<%start.forEach(function(post){%>
+
+    <% if(post.Name==="Contact"){%>
+         <h1><%=post.Name%></h1>
+         <p><%=post.Content%>
+   <%}%>
+   
+ <%});%> 
+
+<%- include("partials/footer")%>

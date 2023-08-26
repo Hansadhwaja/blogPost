@@ -1,0 +1,28 @@
+
+
+<%- include("partials/header")%>
+
+
+<%start.forEach(function(post){%>
+
+   <% if(post.Name==="Home"){%>
+        <h1><%=post.Name%></h1>
+        <p><%=post.Content%>
+       
+  <%}%>
+  
+<%});%> 
+
+ <%end.forEach(function(post){%>
+    <h1><%=post.Name%></h1>
+    <p><%=post.Content.substring(0, 99) + "..."%>
+    <a href="/<%=post.Name%>">Read More</a></p>
+    <form action="/delete" method="post">
+        <button type="submit" class="btn btn-primary" name="postName" value="<%=post.Name%>">Delete Post</button>
+    </form>
+    
+  
+<%});%> 
+
+  
+<%- include("partials/footer")%>
